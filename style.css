@@ -1,0 +1,160 @@
+html,
+    
+    :root {
+      --c1: #f28100; /* Red; Todo - pick better colours here */
+      --c2: #00b4d8; /* Blue; Todo - pick better colours here */
+      --c3: #7e00d8; /* Purple; Todo - pick better colours here */
+    }
+
+
+    body {
+      background: lightgray;
+      font-family: "Avenir Light", Avenir, Calibri, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 2em;
+      color: white;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: Avenir, Calibri, Arial, sans-serif;
+      font-size: 4vw;
+      z-index: 2;
+      color: var(--c1);
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    h2 {
+      font-family: Avenir, Calibri, Arial, sans-serif;
+      font-size: 2vw;
+      z-index: 2;
+    }
+
+    h3 {
+      font-family: Avenir, Calibri, Arial, sans-serif;
+      font-size: 1.5vw;
+      z-index: 2;
+    }
+
+
+    /* Background */
+    .bg {
+      position: relative;
+      text-align: center;
+      padding-top: 0px;
+      width: 75vw;
+      background-color: white;
+      border-left: 2px solid white;
+      border-right:2px solid white;
+      color: black;
+      margin: 0 auto;
+      z-index: 0;
+    }
+
+    .fig {
+      width: 90%;
+    }
+
+    figure {
+        border: thin #c0c0c0 solid;
+        text-align: center;
+        padding: 5px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    figcaption {
+      /* background-color: #222; */
+      /* color: #fff; */
+      font: italic smaller sans-serif;
+      padding: 3px;
+      text-align: center;
+    }
+
+
+
+    #refbox {
+      position: fixed;
+      width: 75vw;
+      top: 92vh;
+      height: 8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      background-color: white;
+      border: 2px solid white;
+      color: black;
+    }
+
+    #menublock
+    {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12.5vw;
+      height: 100vh;
+      font-family: Avenir, Calibri, Arial, sans-serif;
+    }
+
+    #menutext
+    {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      font-size: 1.5vw;
+      line-height: 2.5vw;
+      text-align: center;
+    }
+
+    #bodytext
+    {
+      text-align: justify;
+      margin-left: 6vw;
+      padding-right: 6vw;
+      padding-bottom: 10vh;
+    }
+
+    #titleblock
+    {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      margin-left: 6vw;
+      padding-top: 1vh;
+      text-align: left;
+    }
+
+    #headimg
+    {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      width:100%;
+      
+      object-fit: cover;
+      object-position: 100% 0px;
+      z-index: -1;
+
+      border-bottom:2px solid white;
+    }
+
+    /* Links */
+    a:link {
+      color: var(--c1);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: var(--c1);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color:  var(--c2);
+      background-color: transparent;
+      text-decoration: underline;
+    }

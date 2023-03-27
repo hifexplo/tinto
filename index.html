@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Tinto Benchmark</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+  <!-- Main body -->
+  <div class="bg" id="background" onscroll="moveScroller()">
+    <img src='img/header.jpg' id='headimg'></img>
+    <div id="titleblock">
+      <h1>Tinto</h1>
+      <h2><i>A benchmark dataset for hyperspectral geoscience</i></h2>
+    </div>
+
+    <div id="bodytext">
+      <h3 id="overview">Overview</h3>
+      <p>Deep learning techniques are increasingly used to automatically derive geological maps from digital outcrop models, lessening interpretation time and (ideally) reducing bias. Such techniques are especially needed when hyperspectral images are back-projected to create data-rich ‘hypercloud’ type digital outcrop models.<p>
+        
+      </p> However, accurate validation of these automated mapping approaches is a significant challenge, due to the subjective nature of geological mapping and difficulty collecting quantitative validation data. This makes validation of different machine learning approaches for geological applications exceedingly difficult. Furthermore, many state-of-the-art deep learning methods are limited to 2-D image data, making application to 3-D digital outcrops (e.g., hyperclouds) an outstanding challenge.</p>
+
+      <p>The Tinto dataset aims to help solve these validation issues and so foster further development of deep learning techniques in the geosciences. It comprises two representations (<i>tinto2D</i> and <i>tinto3D</i>) of three benchmark datasets: a real one, a noise-free and realistic (degraded) synthetic twin.
+      </p>
+
+      <p>The real dataset (<i>tinto.real</i>) comprises a compilation of visible, near, short-wave and long-wave infrared hyperspectral data acquired using ground and airborne sensors at <a href='https://goo.gl/maps/dBpkgv31wc9zvqDT6' target="_blank">Rio Tinto</a>, Spain. These have been corrected for atmospheric and topographic effects, and projected onto a photogrammetric point cloud to derive a set of hyperclouds (<i>tinto3D</i>) and corresponding 2D views (<i>tinto2D</i>). Ground-truth labels for every point in the hypercloud (and by projection every pixel in <i>tinto2D</i>) were then derived by a combination of laboratory XRD analyses, hyperspectral interpretation, and digital outcrop mapping. 
+      </p>
+
+      <p>
+      Issues associated with potential biases or inconsistencies in the ground-truth labels associated with the real dataset have been addressed by generating an entirely synthetic suite of spectral data by forward modelling (<i>tinto.synth</i> and <i>tinto.degr</i>). These share the same labels as the real dataset, as well as several latent variables and spatial relationships, but are derived using a spectral mixing model and a spatial distribution of mineral abundances simulated using spectral proxies. We suggest that these synthetic spectra are suited for comparing learning approaches, as the ground truth is known with certainty, while the real spectra can be used to evaluate performance on realistic data. <i>tinto.synth</i> contains perfect (noise-free) spectra, largely for testing purposes, while <i>tinto.degr</i> contains these spectra with added sensor-noise, illumination and topographic effects to better simulate real data. Synthetic mineral abundances and pure end-member spectra have also been included in <i>tinto.synth</i> for testing e.g., endmember extraction and unmixing methods. 
+      </p>
+
+      <p>
+      Finally, we have also included two versions of the ground-truth labels for each dataset: one simplified (<i>tinto.labels_basic</i>), and one complete (<i>tinto.labels_complete</i>). While we encourage people to use the complete label set, geologically similar classes have been lumpted together in the basic dataset to derive a benchmark with fewer classes for testing e.g., unsupervised methods.
+      </p>
+
+      <figure>
+          <img src="img/label_fig.png"
+               alt="Ground-truth labels" class="fig">
+          <figcaption>Simplified (a) and complete (b) ground truth labels provided for this benchmark dataset. The suggested training subset is outlined in black and follows traverses that match roughly with how a field geologist would collect data.
+          </figcaption>
+      </figure>
+
+      <h3 id="tinto3d">Tinto.3D</h3>
+
+      <p>Each of the real and synthetic benchmark datasets described above contain point clouds, stored as lists of vertices in the common <a href='http://paulbourke.net/dataformats/ply/' target="_blank">.ply</a> format. Each vertex contains additional scalar attributes (<i>properties</i> in the .ply terminology) that contain e.g., class labels or hyperspectral bands.</p>
+
+      <p>These point clouds can be opened for visualisation using the open-source <a href='https://www.danielgm.net/cc/' target="_blank">CloudCompare</a> software, where the scalar attributes will be loaded as <i>Scalar Fields</i>. Additionally, online previews of the various datasets can be viewed in the <a href='https://potree.github.io/' target="_blank">PoTree</a> viewer <a href='' target="_blank">here</a>.</p>
+
+      <p><b>TODO: Add link to PoTree viewer</b></p>
+
+      <h3 id="tinto2d">Tinto.2D</h3>
+      
+      <p>While the main aim of this benchmark is to provide a much-needed 3-D benchmark dataset (<i>tinto3D</i>) for point-cloud classification methods, we have also included several 2-D representations as we acknowledge that many state-of-the-art methods can not (yet) handle unstructured 3-D point cloud data. <i>Tinto2D</i> thus contains three different projections of each hypercloud and associated ground-truth labels: (1) a top-down orthomosaic, (2) an oblique perspective view, and (3) an oblique panoramic view. These are all stored in the widely used <a href='https://www.l3harrisgeospatial.com/docs/enviimagefiles.html' target="_blank">ENVI</a> format.
+      </p>
+
+      <figure>
+          <img src="img/data_fig.png"
+               alt="Tinto2D views" class="fig">
+          <figcaption>False-colour visualisations of the real LWIR (a), VNIR (b) and SWIR (c) hyperspectral datasets from the three viewpoints used to derive the Tinto2D benchmark images.
+          </figcaption>
+      </figure>
+
+      <h3 id="demo">Demo</h3>
+      
+      <p> To help get started with the tinto benchmark, we have created a basic python tutorial that opens the dataset using <a href='https://github.com/hifexplo/hylite' target="_blank">hylite</a>
+      and trains a simple classification model using <a href='https://scikit-learn.org/stable/' target="_blank">sklearn</a>. This is best viewed using GoogleColab <a href='' target="_blank">here</a>. </p> 
+
+      <h3 id="download">Download</h3>
+      
+      <p>The tinto datset can be downloaded in entirety or in part from <a href='' target="_blank">here</a>.</p>
+      <p><b> TODO: update the above link once the dataset is archived! </b></p>
+
+      <figure>
+          <img src="img/ds_tree.png"
+               alt="Dataset overview" class="fig" style="max-width: 50%">
+          <figcaption>An overview of the structure of the tinto benchmark and the various datasets it contains.
+          </figcaption>
+      </figure>
+
+
+    </div>
+
+  </div>
+
+  <!-- Reference -->
+  <div id="refbox">
+    <p><i>Afifi et. al., Tinto: A Benchmark Dataset for Hyperspectral Segmentation in the Geosciences. <b>Some awesome journal</b> 2023 </i></p>
+  </div>
+
+  <div id="menublock">
+    <b>
+    <div id="menutext" >
+      <a href="#overview" >Overview</a><br/>
+      <a href="#tinto3d">Tinto.3D</a><br/>
+      <a href="#tinto2d">Tinto.2D</a><br/>
+      <a href="#demo">Demo</a><br/>
+      <a href="#download">Download</a><br/>
+    </div>
+    </b>
+  </div>
+
+</body>
+
+</html>
