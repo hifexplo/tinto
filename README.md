@@ -1,5 +1,7 @@
 # tinto
-A benchmark dataset for hyperspectral geoscience
+A benchmark dataset for hyperspectral geoscience.
+
+Please view the benchmark dataset website here: https://hifexplo.github.io/tinto/
 
 ## Overview
 
