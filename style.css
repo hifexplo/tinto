@@ -10,7 +10,7 @@ html,
     body {
       background: lightgray;
       font-family: "Avenir Light", Avenir, Calibri, Arial, sans-serif;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 2em;
       color: white;
       text-align: center;
@@ -19,7 +19,7 @@ html,
 
     h1 {
       font-family: Avenir, Calibri, Arial, sans-serif;
-      font-size: 4vw;
+      font-size: 96px;
       z-index: 2;
       color: var(--c1);
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -27,13 +27,13 @@ html,
 
     h2 {
       font-family: Avenir, Calibri, Arial, sans-serif;
-      font-size: 2vw;
+      font-size: 48px;
       z-index: 2;
     }
 
     h3 {
       font-family: Avenir, Calibri, Arial, sans-serif;
-      font-size: 1.5vw;
+      font-size: 28px;
       z-index: 2;
     }
 
@@ -119,27 +119,14 @@ html,
 
     #titleblock
     {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      margin-left: 6vw;
-      padding-top: 1vh;
-      text-align: left;
-    }
-
-    #headimg
-    {
       position: relative;
       top: 0px;
       left: 0px;
-      width:100%;
-      
-      object-fit: cover;
-      object-position: 100% 0px;
-      z-index: -1;
-
-      border-bottom:2px solid white;
+      width: 84%;
+      margin-left: 6vw;
+      padding-right: 6vw;
+      padding-top: 1vh;
+      text-align: left;
     }
 
     /* Links */
