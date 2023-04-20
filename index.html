@@ -13,15 +13,9 @@
       <h1>Tinto</h1>
       <h2><i>A benchmark dataset for hyperspectral geoscience</i></h2>
       <hr/>
-      <div style="text-align: center">
-      <h3>
-      <a href="#overview" >Overview</a> . . .
-      <a href="#tinto3d">Tinto.3D</a> . . .
-      <a href="#tinto2d">Tinto.2D</a> . . .
-      <a href="#demo">Demo</a> . . .
-      <a href="#download">Download</a>
-      <h3>
-      </div>
+        <div style="text-align: center" id="menu">
+          <!-- menu will go here -->
+        </div>
       <hr/>
     </div>
 
@@ -113,6 +107,32 @@
     </b>
   </div> -->
 
+  <script>
+    function resize() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        if ( (w / h) > 1.0 ) { // landscape mode
+          document.getElementById('menu').innerHTML = `<h3>
+          <a href="#overview" >Overview</a> . . .
+          <a href="#tinto3d">Tinto.3D</a> . . .
+          <a href="#tinto2d">Tinto.2D</a> . . .
+          <a href="#demo">Demo</a> . . .
+          <a href="#download">Download</a>
+          <h3>`
+        } 
+        else { // portrait mode
+          document.getElementById('menu').innerHTML = `<h3>
+          <a href="#overview" >Overview</a><br/>
+          <a href="#tinto3d">Tinto.3D</a><br/>
+          <a href="#tinto2d">Tinto.2D</a><br/>
+          <a href="#demo">Demo</a><br/>
+          <a href="#download">Download</a>
+          <h3>`
+        }
+      }
+    window.addEventListener('resize', resize, true);
+    resize();
+  </script>
 </body>
 
 </html>
