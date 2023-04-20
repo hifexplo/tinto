@@ -119,6 +119,13 @@
           <a href="#demo">Demo</a> . . .
           <a href="#download">Download</a>
           <h3>`
+
+          // update background padding
+          var e = document.getElementsByClassName('bg');
+          for(i = 0; i < e.length; i++) {
+            e[i].style.width = '75vw';
+          }
+          document.getElementById('refbox').style.width = '75vw';
         } 
         else { // portrait mode
           document.getElementById('menu').innerHTML = `<h3>
@@ -128,6 +135,14 @@
           <a href="#demo">Demo</a><br/>
           <a href="#download">Download</a>
           <h3>`
+
+          // update background padding
+          var e = document.getElementsByClassName('bg');
+          for(i = 0; i < e.length; i++) {
+            e[i].style.width = '95vw';
+          }
+          document.getElementById('refbox').style.width = '95vw';
+
         }
       }
     window.addEventListener('resize', resize, true);
