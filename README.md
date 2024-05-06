@@ -20,4 +20,4 @@ Finally, we have also included two versions of the ground-truth labels for each 
 
 If the Tinto dataset is useful for your work, please cite:
 
-> [Afifi, Ahmed J., et al. “Tinto: Multisensor Benchmark for 3D Hyperspectral Point Cloud Segmentation in the Geosciences.” IEEE Transactions on Geoscience and Remote Sensing (2023). 10.1109/TGRS.2023.3340293](dx.doi.org/10.1109/TGRS.2023.3340293)
+> [Afifi, Ahmed J., et al. “Tinto: Multisensor Benchmark for 3D Hyperspectral Point Cloud Segmentation in the Geosciences.” IEEE Transactions on Geoscience and Remote Sensing (2023). 10.1109/TGRS.2023.3340293](https://dx.doi.org/10.1109/TGRS.2023.3340293)
