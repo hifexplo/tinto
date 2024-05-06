@@ -15,3 +15,9 @@ The real dataset (tinto.real) comprises a compilation of visible, near, short-wa
 Issues associated with potential biases or inconsistencies in the ground-truth labels associated with the real dataset have been addressed by generating an entirely synthetic suite of spectral data by forward modelling (tinto.synth and tinto.degr). These share the same labels as the real dataset, as well as several latent variables and spatial relationships, but are derived using a spectral mixing model and a spatial distribution of mineral abundances simulated using spectral proxies. We suggest that these synthetic spectra are suited for comparing learning approaches, as the ground truth is known with certainty, while the real spectra can be used to evaluate performance on realistic data. tinto.synth contains perfect (noise-free) spectra, largely for testing purposes, while tinto.degr contains these spectra with added sensor-noise, illumination and topographic effects to better simulate real data. Synthetic mineral abundances and pure end-member spectra have also been included in tinto.synth for testing e.g., endmember extraction and unmixing methods.
 
 Finally, we have also included two versions of the ground-truth labels for each dataset: one simplified (tinto.labels_basic), and one complete (tinto.labels_complete). While we encourage people to use the complete label set, geologically similar classes have been lumpted together in the basic dataset to derive a benchmark with fewer classes for testing e.g., unsupervised methods.
+
+## Citation
+
+If the Tinto dataset is useful for your work, please cite:
+
+> [Afifi, Ahmed J., et al. “Tinto: Multisensor Benchmark for 3D Hyperspectral Point Cloud Segmentation in the Geosciences.” IEEE Transactions on Geoscience and Remote Sensing (2023). 10.1109/TGRS.2023.3340293](dx.doi.org/10.1109/TGRS.2023.3340293)
